@@ -5,9 +5,9 @@
         <img class="fotoG" src="https://t1.rg.ltmcdn.com/pt/images/9/8/3/img_pizza_calabresa_e_mussarela_4389_600.jpg" alt="Foto Produto">
         
       <div class="dados">
-        <p><strong>Sabor:</strong> Calabresa</p>
-        <p><strong>Descrição:</strong> Calabresa, mussarela, molho de tomate e oregano.</p>
-        <p><strong>Valor:</strong> R$23,99</p>
+        <p><strong>Sabor: </strong>Calabresa</p>
+        <p><strong>Descrição: </strong> Calabresa, mussarela, molho de tomate e oregano.</p>
+        <p><strong>Valor: </strong> R$23,99</p>
       </div><!--dados-->
 
       <div class="qtdProd">
@@ -23,11 +23,23 @@
 </template>
 
 <script>
-// import axios from 'axios'
+import axios from 'axios';
 import Menu from '@/components/Menu';
 export default {
   components:{
     Menu
+  },
+  props:{
+    produtos: Object,
+    produto:[]
+  },
+  created: function(){
+    axios.get(`http://localhost:3030/detalhe/`).then(res =>{
+      this.produtos = res.data
+      console.log(res.data);
+    }).catch(err=>{
+      console.log(err);
+    })
   }
   
 }
