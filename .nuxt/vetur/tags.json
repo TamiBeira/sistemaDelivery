@@ -1,0 +1,11 @@
+{
+  "Menu": {
+    "description": "Auto imported from components/Menu.vue"
+  },
+  "Produtos": {
+    "description": "Auto imported from components/Produtos.vue"
+  },
+  "Tutorial": {
+    "description": "Auto imported from components/Tutorial.vue"
+  }
+}
